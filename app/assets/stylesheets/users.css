@@ -1,0 +1,85 @@
+.connect-image img{
+  max-height: 100px;
+}
+.user-title {
+  font-family: avenir;
+  color: rgb(95,95,95);
+  text-align: center;
+  font-size: 30px;
+}
+
+.user-title span{
+  color: rgb(185,207,158);
+}
+
+.card-holder {
+  text-align: center;
+}
+
+.card-holder span {
+  color: red;
+}
+
+.new-user-form input{
+  width: 200px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.new-user-form {
+  font-family: avenir;
+  background: rgb(90,90,90);
+  padding: 10px;
+  width: 30%;
+  border-radius: 5px;
+  color: rgb(185,207,158);
+  margin: 0 auto;
+}
+
+.assigned-cards {
+  padding: 10px;
+  width: 20%;
+  border: 3px dotted rgb(185,207,158);
+  border-bottom: 3px solid black;
+  border-left: 3px solid black;
+  font-family: avenir;
+  background: rgb(90,90,90);
+  border-radius: 10px;
+  color: rgb(185,207,158);
+  height: 400px;
+  overflow-y: scroll;
+  display: inline-block;
+}
+
+.delete-card button{
+  float: right;
+  background: rgb(185,207,158);
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.delete-card button:hover {
+  color: red;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.edit-button {
+  background: #FFF5F3;
+  width: 200px;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-family: avenir;
+  letter-spacing: 1px;
+}
+
+.edit-button:hover {
+  background: rgb(185,207,158);
+  cursor: pointer;
+}
+
+.edit-notes {
+  background: #FFF5F3;
+  padding: 5px;
+}
+

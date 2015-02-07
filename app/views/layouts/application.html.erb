@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Galleryconnect</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div id="links">
+      <%= link_to "Home", user_path(current_user.id), class: "logout" unless session["user_id"].nil? %> 
+      <%= link_to "Log Out", "/session", method: "delete", class: "logout" unless session[:user_id].nil? %>
+      <% if session[:user_id] && current_user.is_admin? %>
+      <%= link_to "New Card", new_user_card_path(current_user.id), class: "logout" unless session[:user_id].nil? %>
+      <% end %>
+  </div>
+    <% if session[:user_id] && current_user.is_admin? %>
+      <div id="links">
+        <%= link_to "All Users", users_path(current_user.id), class: "logout" unless session[:user_id].nil? %>
+        <%= link_to "All Cards", user_cards_path(current_user.id), class: "logout" unless session[:user_id].nil? %>
+      </div>
+    <% end %>
+<%= yield %>
+
+</body>
+</html>

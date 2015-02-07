@@ -1,0 +1,51 @@
+.title-image img{
+  max-width: 500px;
+}
+
+.title-image {
+  text-align: center;
+}
+
+.title-image a {
+  text-decoration: none;
+  margin-left: -90px;
+  color: black;
+  font-size: 15px;
+  font-family: avenir;
+  background: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.title-image a:hover {
+  background: rgb(130,130,130);
+  color: #fff;
+}
+
+.login {
+  font-family: avenir;
+  font-size: 20px;
+  color: #808080;
+}
+
+.loginbutton {
+  padding: 3px;
+  background: #fff;
+  border-radius: 5px;
+  width: 100px;
+  color: black;
+  font-family: avenir;
+  border: 1px solid black;
+}
+
+.loginbutton:hover {
+  background: grey;
+  color: #fff;
+}
+
+.footer-image {
+  margin-top: 10px;
+  height: 400px;
+  background: url('holdinghands.jpg');
+  background-size: cover;
+}

@@ -1,0 +1,32 @@
+<div class="user-page-container">
+  <div class="connect-image">
+    <%= image_tag('GC.png') %>
+  </div>
+  <hr />
+  <div class='new-user-form'>
+    <p>Become a new connect team member</p>
+  <%= form_for @user do |f|%>
+    <%= f.text_field :first_name %>
+    <%= f.label "First Name" %><br /><hr />
+    <%= f.text_field :last_name %>
+    <%= f.label "Last Name" %><br /><hr />
+    <%= f.email_field :email %>
+    <%= f.label "Email" %><br /><hr />
+    <%= f.text_field :phone_number %>
+    <%= f.label "Phone" %><br /><hr />
+    <%= f.text_field :street_address %>
+    <%= f.label :address %><br /><hr />
+    <%= f.text_field :city %>
+    <%= f.label :city %><br /><hr />
+    <%= f.text_field :state %>
+    <%= f.label :state %><br /><hr />
+    <%= f.text_field :zipcode %>
+    <%= f.label :zipcode %><br /><hr />
+    <%= f.password_field :password %>
+    <%= f.label :password %><br /><hr />
+    <%= f.password_field :password_confirmation %>
+    <%= f.label "Password Confirmation"%><br /><hr />
+    <%= f.submit "Sign Up", class:"create-button" %>
+  <% end %>
+  </div>
+</div>

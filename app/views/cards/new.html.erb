@@ -1,0 +1,11 @@
+<div class="user-page-container">
+  <div class="connect-image">
+    <%= image_tag('GC.png') %>
+  </div>
+  <hr />
+    <%= form_for [@user, @card] do |f|%>
+      <% @form = f %>
+      <%= render "left" %>
+      <%= render "right" %>
+    <% end %>
+</div>

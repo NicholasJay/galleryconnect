@@ -1,0 +1,7 @@
+<div class='all-users-list'>
+  <h3><u><b>Assign to:</b></u></h3>
+  <% @users.each do |user| %>
+  <p><%= @form.radio_button :user_id, user.id %> <%= @form.label :user_id, user.first_name + " " + user.last_name, :value => user.id %></p>
+  <% end %>
+  <%= @form.submit "Create", class:"create-button" %>
+</div>

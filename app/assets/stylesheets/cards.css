@@ -1,0 +1,65 @@
+.new-card-form input{
+  width: 200px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.new-card-form {
+  font-family: avenir;
+  background: rgb(90,90,90);
+  padding: 10px;
+  width: 30%;
+  border-radius: 5px;
+  color: rgb(185,207,158);
+  float: left;
+}
+
+.create-button {
+  background: rgb(130,130,130);
+  color: rgb(185,207,158);
+  font-family: avenir;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.create-button:hover {
+  background: rgb(90,90,90);
+  color: #fff;
+  cursor: pointer;
+}
+
+.new-card-form input[type="checkbox"]{
+  cursor: pointer;
+}
+
+.all-users-list {
+  float: right;
+  width: 50%;
+  font-family: avenir;
+  color: rgb(50,50,50);
+}
+.all-users-list p{
+  background: rgb(90,90,90);
+  width: 50%;
+  border-radius: 5px;
+  padding: 5px;
+  color: rgb(185,207,158);
+}
+
+input[type="checkbox"] {
+        vertical-align: top;
+        border: #ccc solid 1px;
+        border-radius: 20%;
+        background: red;
+        height: 14px;
+        outline: 0;
+        margin: 3px;
+        width: 14px;
+        -webkit-appearance: none;
+        appearance: none;
+}
+
+input[type="checkbox"]:checked { 
+            background: rgb(185,207,158);
+            box-shadow: inset 0 0 0 1px #FFFFFF;
+        }

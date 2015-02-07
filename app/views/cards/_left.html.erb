@@ -1,0 +1,22 @@
+ <div class='new-card-form'>
+      <%= @form.text_field :first_name %>
+      <%= @form.label "First Name" %><br /><hr />
+      <%= @form.text_field :last_name %>
+      <%= @form.label "Last Name" %><br /><hr />
+      <%= @form.email_field :email %>
+      <%= @form.label "Email" %><br /><hr />
+      <%= @form.text_field :phone %>
+      <%= @form.label "Phone" %><br /><hr />
+      <%= @form.text_field :address %>
+      <%= @form.label :address %><br /><hr />
+      <%= @form.text_field :city %>
+      <%= @form.label :city %><br /><hr />
+      <%= @form.text_field :state %>
+      <%= @form.label :state %><br /><hr />
+      <%= @form.text_field :zipcode %>
+      <%= @form.label :zipcode %><br /><hr />
+      <%= @form.text_area :prayer, :rows=>"3", :cols=>"35"%>
+      <%= @form.label "Prayer Request" %><br /><hr />
+      <%= @form.text_area :notes, :rows=>"3", :cols=>"35" %>
+      <%= @form.label "notes" %><br /><hr />
+  </div>

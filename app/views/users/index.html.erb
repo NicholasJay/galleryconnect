@@ -1,0 +1,26 @@
+<div class="user-page-container">
+  <div class="connect-image">
+    <%= image_tag('GC.png') %>
+  </div>
+  <hr />
+  <div class="user-title">
+    <p>All Users</p>
+  </div>
+<% if current_user.is_admin? %>
+  <div class="card-holder">
+    <% @users.each do |user| %>
+    <div class="assigned-cards">
+      <form action="<%= user_path(user.id) %>" method="POST" class="delete-card">
+                <input type="hidden" name="_method" value="DELETE" />
+                <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+                <button class='deletebutton'>Delete User x</button><br />
+      </form>         
+      <p>Name: <%= user.first_name + " " + user.last_name%></p><hr />
+      <p>Phone: <%= user.phone_number %></p><hr />
+      <p>Email: <%= user.email %></p><hr />
+      <p>Address:<br /> <%= user.street_address %><br /><%= user.city + ", " + user.state %><br />Zip: <%= user.zipcode %></p><hr />
+    </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>

@@ -1,0 +1,34 @@
+<div class="user-page-container">
+  <div class="connect-image">
+    <%= image_tag('GC.png') %>
+  </div>
+  <hr />
+  <div class="user-title">
+    <p><%= @user.first_name %>'s <span>Connection</span> Cards</p>
+  </div>
+  <% if @cards.empty? %>
+    <center><%= image_tag('grey-thank-you.png') %></center><br />
+  <% end %>
+  <div class="card-holder">
+    <% @cards.each do |card| %>
+    <div class="assigned-cards">
+      <p>Name: <%= card.first_name + " " + card.last_name%></p><hr />
+      <p>Phone: <%= card.phone %></p><hr />
+      <p>Email: <%= card.email %></p><hr />
+      <p>Address:<br /> <%= card.address %><br /><%= card.city + ", " + card.state %><br />Zip: <%= card.zipcode %></p><hr />
+      <p>Prayer: <%= card.prayer %></p><hr />
+      <p>Notes</p>
+      <%= form_for [@user, card] do |f| %>
+        <%= f.text_area :notes, :rows=>"5", :cols=>"30", value: card.notes, class:"edit-notes" %>
+        <%= f.check_box :called %><%= f.label :called %><hr />
+        <%= f.submit "Update", class:"edit-button" %>
+      <% end %>
+      <% if card.called? == false %>
+      <p>Has Not Been Called</p>
+      <% else %>
+      <p>Has Been Called</p>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
