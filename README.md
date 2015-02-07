@@ -1,4 +1,4 @@
-![ScreenShot](GC.png)
+![Connect Team](http://s1.postimg.org/6p7e1zsxb/image.png)
 ### A  church connection card app
 
 * Sign up new members on your connect team
