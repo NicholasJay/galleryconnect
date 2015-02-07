@@ -10,4 +10,4 @@
 * Adding a cron job to email users once a week with cards that have not been called
 
 Link to the application
-[Gallery Connect App](http://www.google.com)
+[Gallery Connect App](http://galleryconnect.herokuapp.com)
