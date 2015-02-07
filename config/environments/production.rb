@@ -77,4 +77,17 @@ Galleryconnect::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+
+  :address          => "smtp.gmail.com",
+  :port             => 587,
+  :domain           => "localhost",
+  :user_name        => "gallery.connect.team@gmail.com",
+  :password         => ENV["CONNECTEMAILPASS"],
+  :authentication   => "plain",
+  :enable_starttls_auto => true
+}
 end
