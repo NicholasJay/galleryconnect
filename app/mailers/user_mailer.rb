@@ -7,6 +7,12 @@ class UserMailer < ActionMailer::Base
     mail(to: @user.email, subject: "You have a new connection!")
   end
 
+  def weekly_cards(card)
+    @card = card
+    @user = User.find_by id: card.user_id
+    mail(to: @user.email, subject: "Don't Forget Gallery Connect!")
+  end
+
   def login_info
     username = gallery.connect.team 
     password = gallerynewyork
