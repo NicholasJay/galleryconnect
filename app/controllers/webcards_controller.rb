@@ -27,7 +27,7 @@ class WebcardsController < ApplicationController
 
   def destroy
     @wcard.destroy
-    redirect_to user_webcards_path(User.find(params[:id]))
+    redirect_to user_webcards_path(current_user)
   end
 
 private

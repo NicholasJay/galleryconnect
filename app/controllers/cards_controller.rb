@@ -30,7 +30,6 @@ class CardsController < ApplicationController
     @changed = @cards.update(card_params)
 
     if @changed
-      flash[:message] = "Updated Successfully"
       redirect_to user_path(@user.id)
     else
       flash[:message] = 'Update Failed!'
