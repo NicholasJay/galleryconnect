@@ -41,7 +41,7 @@ class CardsController < ApplicationController
 
   def destroy
     @cards.destroy
-    redirect_to user_path(@user)
+    redirect_to user_cards_path(@user)
   end
 
   private

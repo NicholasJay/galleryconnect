@@ -14,6 +14,9 @@
         <% end %>
       </div>  
   </div>
+  <div class="flash-message-login">
+        <%= raw("<p>#{flash[:message]}</p>") unless flash[:message].nil? %>
+  </div>
   <div class='footer-image'>
   </div>
 </div>

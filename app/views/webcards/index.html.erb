@@ -1,0 +1,17 @@
+<div class="webcard-page-container">
+  <div class="connect-image">
+    <%= image_tag('GC.png') %>
+  </div>
+  <hr />
+<div class="webcard-holder">
+  <h2>New Cards From GalleryChurch.com To Assign</h2><hr />
+  <ul>
+    <% @allwebcards.each do |card| %>
+      <li><%= link_to card.first_name + " " + card.last_name, user_webcard_path(@user.id, card.id)%>
+        <form action="<%= webcard_path(card.id) %>" method="POST" class="webcard-holder">
+        <input type="hidden" name="_method" value="DELETE" />
+        <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+        <button class='deletebutton'>Delete</button></form></li>           
+    <% end %>
+  </ul>
+</div>

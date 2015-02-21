@@ -14,7 +14,8 @@
                 <input type="hidden" name="_method" value="DELETE" />
                 <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
                 <button class='deletebutton'>Delete Card x</button><br />
-      </form>         
+      </form>   
+      <p>Assigned To: <%= User.where(id: card.user_id).first.first_name %></p><hr />      
       <p>Name: <%= card.first_name + " " + card.last_name%></p><hr />
       <p>Phone: <%= card.phone %></p><hr />
       <p>Email: <%= card.email %></p><hr />

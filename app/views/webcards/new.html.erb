@@ -1,0 +1,32 @@
+<div class="webcard-page-container">
+  <div class="connect-image">
+    <%= image_tag('GC.png') %>
+  </div>
+  <hr />
+  <h2 class="webcard-title">Tell us about yourself</h2>
+    <div class="web-card-form">
+      <%= form_for [@card] do |f|%>
+      <%= f.text_field :first_name %>
+      <%= f.label "First Name" %><br /><hr />
+      <%= f.text_field :last_name %>
+      <%= f.label "Last Name" %><br /><hr />
+      <%= f.email_field :email %>
+      <%= f.label "Email" %><br /><hr />
+      <%= f.text_field :phone %>
+      <%= f.label "Phone" %><br /><hr />
+      <%= f.text_field :address %>
+      <%= f.label :address %><br /><hr />
+      <%= f.text_field :city %>
+      <%= f.label :city %><br /><hr />
+      <%= f.text_field :state %>
+      <%= f.label :state %><br /><hr />
+      <%= f.text_field :zipcode %>
+      <%= f.label :zipcode %><br /><hr />
+      <%= f.text_area :prayer, :rows=>"3", :cols=>"35"%>
+      <%= f.label "Prayer Request" %><br /><hr />
+      <%= f.text_area :notes, :rows=>"3", :cols=>"35" %>
+      <%= f.label "Comments" %><br /><hr />
+      <%= f.submit "Submit", class:"create-button" %>
+      <% end %>
+  </div>
+</div>

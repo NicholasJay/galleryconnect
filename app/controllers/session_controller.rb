@@ -13,8 +13,8 @@ class SessionController < ApplicationController
       session[:user_id] = user.id
       redirect_to user_path(user)
     else
-      flash[:error] = "Username or Password not found!"
-      redirect_to new_user_path
+      flash[:message] = "Username or Password not found!"
+      redirect_to root_path
     end 
 
   end

@@ -19,6 +19,7 @@
       <div id="links">
         <%= link_to "All Users", users_path(current_user.id), class: "logout" unless session[:user_id].nil? %>
         <%= link_to "All Cards", user_cards_path(current_user.id), class: "logout" unless session[:user_id].nil? %>
+        <%= link_to "Web Cards", user_webcards_path(current_user.id), class: "logout" unless session[:user_id].nil? %>
       </div>
     <% end %>
 <%= yield %>
