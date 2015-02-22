@@ -5,6 +5,7 @@ Galleryconnect::Application.routes.draw do
   end
 
   resources :webcards
+  get '/webcards', to: 'webcards#confirm_card'
 
   get '/session', to: 'session#new'
   post '/session', to: 'session#create'
