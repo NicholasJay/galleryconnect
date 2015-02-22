@@ -72,19 +72,9 @@
   color: red; 
 }
 
-.confirm-page{
-  height: 500px;
-  margin-top: 75px;
-  background: url('GCBackground.jpg');
-  background-size: cover;
-}
-
 #dialog {
+  display: none;
   background: rgb(90,90,90);
   color: rgb(185,207,158);
 }
 
-#okay-button {
-  background: rgb(185,207,158);
-  float: right;
-}

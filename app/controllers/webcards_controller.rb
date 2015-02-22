@@ -14,7 +14,7 @@ class WebcardsController < ApplicationController
     @webcard = Webcard.new(card_params)
     
     if @webcard.save
-      render :confirm_card
+      redirect_to "http://www.gallerychurch.com/new"
     else
       render :new
     end
@@ -23,10 +23,6 @@ class WebcardsController < ApplicationController
   def show
     @webcard = Card.new
     @users = User.all
-  end
-
-  def confirm_card
-    render :confirm_card  
   end
 
   def destroy

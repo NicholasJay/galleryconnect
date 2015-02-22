@@ -1,3 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Gallery Connect</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+</head>
+<body>
+
 <div class="webcard-page-container">
   <div class="webcard-image">
     <%= image_tag 'GBackground.png' %>
@@ -25,8 +37,22 @@
       <%= f.label "Prayer Request" %><br /><hr />
       <%= f.text_area :notes, :rows=>"2", :cols=>"35" %>
       <%= f.label "Comments" %><br /><hr />
-      <%= f.submit "Submit", class:"create-button" %>
+      <%= f.submit "Submit", class:"create-button", id:"card-submit" %>
       <% end %>
   </div>
 </div>
 
+<div class="confirm-page">
+  <div id="dialog" title="Gallery Church">
+    <p>Your Connection Card has been received!</p>
+  </div>
+</div>
+ 
+ 
+</body>
+<script>
+$('#card-submit').click(function(){
+  $( "#dialog" ).dialog();
+});
+</script>
+</html>
