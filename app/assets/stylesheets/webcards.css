@@ -51,6 +51,15 @@
   color: rgb(185,207,158);
 }
 
+.webcard-image img{
+  max-height: 100px;
+}
+
+.webcard-image {
+  background: rgb(185,207,158);
+  padding: 5px;
+}
+
 .deletebutton{
   padding-left: 15px;
   background: none;
