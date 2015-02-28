@@ -13,6 +13,11 @@ class UserMailer < ActionMailer::Base
     mail(to: @user.email, subject: "Don't Forget Gallery Connect!")
   end
 
+  def new_webcard_notification(webcard)
+    @webcard = webcard
+    mail(to: "beccaw30@gmail.com", subject: "New Website Card Filled Out")
+  end
+
   def login_info
     username = gallery.connect.team 
     password = gallerynewyork

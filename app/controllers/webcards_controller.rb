@@ -14,6 +14,7 @@ class WebcardsController < ApplicationController
     @webcard = Webcard.new(card_params)
     
     if @webcard.save
+      UserMailer.new_webcard_notification(@webcard).deliver
       redirect_to "http://www.gallerychurch.com/new"
     else
       render :new
