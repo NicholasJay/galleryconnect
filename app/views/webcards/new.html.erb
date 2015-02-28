@@ -1,20 +1,19 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Gallery Connect</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css">
-</head>
-<body>
+<header>
+  <link href='http://fonts.googleapis.com/css?family=Oxygen:300,400,400italic,500,600,700,700italic&amp;subset=latin,greek-ext,cyrillic,latin-ext,greek,cyrillic-ext,vietnamese' rel='stylesheet' type='text/css' />
+</header>
 
 <div class="webcard-page-container">
+  <div class="top-header">
+    <p>424-888-0995 | <a href="mailto:info@gallerychurch.com">info@gallerychurch.com</a></p>
+  </div>
+
   <div class="webcard-image">
-    <%= image_tag 'GBackground.png' %>
+    <%= image_tag 'GreyGCchurch.png' %>
 </div>
-  <h2>Gallery Connect Card: <span>Tell us about yourself!</span></h2>
+<div class="webcard-wrapper">
+  <h2>Gallery Connect Card<br />
+    <span>Tell us about yourself!</span></h2>
     <div class="web-card-form">
       <%= form_for [@card] do |f|%>
       <%= f.text_field :first_name %>
@@ -40,6 +39,7 @@
       <%= f.submit "Submit", class:"create-button", id:"card-submit" %>
       <% end %>
   </div>
+</div>
 </div>
 
 <div class="confirm-page">
