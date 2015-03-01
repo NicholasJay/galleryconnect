@@ -12,12 +12,12 @@
   color: rgb(185,207,158);
 }
 
-.card-holder {
-  text-align: center;
+#contacted-card-holder, #uncontacted-card-holder span {
+  color: red;
 }
 
-.card-holder span {
-  color: red;
+#contacted-card-holder {
+  display: none;
 }
 
 .new-user-form input{
@@ -83,3 +83,29 @@
   padding: 5px;
 }
 
+#contacted, #uncontacted {
+  display: inline;
+  font-size: 18px;
+  font-family: avenir;
+  text-decoration: none;
+  border-radius: 10px;
+  background: rgb(110,110,110);
+  padding:3px;
+  padding-left: 45px;
+  padding-right: 45px;
+  margin-left: 5px;
+  text-align: center;
+  color: rgb(185,207,158);
+}
+
+#contacted:hover, #uncontacted:hover{
+  background: rgb(130,130,130);
+  color: #fff;
+  cursor: pointer;
+}
+
+.contact-buttons {
+  text-align: center;
+  margin-top: -20px;
+  padding-bottom: 10px
+}

@@ -9,8 +9,12 @@
   <% if @cards.empty? %>
     <center><%= image_tag('grey-thank-you.png') %></center><br />
   <% end %>
-  <div class="card-holder">
+  <div class="contact-buttons">
+    <div id="uncontacted">Not Contacted</div><div id="contacted">Contacted</div>
+  </div>
+  <div id="uncontacted-card-holder">
     <% @cards.each do |card| %>
+      <% unless card.called? %>
     <div class="assigned-cards">
       <p>Name: <%= card.first_name + " " + card.last_name%></p><hr />
       <p>Phone: <%= card.phone %></p><hr />
@@ -20,15 +24,54 @@
       <p>Notes</p>
       <%= form_for [@user, card] do |f| %>
         <%= f.text_area :notes, :rows=>"5", :cols=>"30", value: card.notes, class:"edit-notes" %>
-        <%= f.check_box :called %><%= f.label :called %><hr />
+        <%= f.check_box :called %><%= f.label :contacted %><hr />
         <%= f.submit "Update", class:"edit-button" %>
       <% end %>
       <% if card.called? == false %>
-      <p>Has Not Been Called</p>
+      <p>Has Not Been Contacted</p>
       <% else %>
-      <p>Has Been Called</p>
+      <p>Has Been Contacted</p>
       <% end %>
     </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div id="contacted-card-holder">
+    <% @cards.each do |card| %>
+      <% if card.called? %>
+    <div class="assigned-cards">
+      <p>Name: <%= card.first_name + " " + card.last_name%></p><hr />
+      <p>Phone: <%= card.phone %></p><hr />
+      <p>Email: <%= card.email %></p><hr />
+      <p>Address:<br /> <%= card.address %><br /><%= card.city + ", " + card.state %><br /><%= card.zipcode %></p><hr />
+      <p>Prayer: <%= card.prayer %></p><hr />
+      <p>Notes</p>
+      <%= form_for [@user, card] do |f| %>
+        <%= f.text_area :notes, :rows=>"5", :cols=>"30", value: card.notes, class:"edit-notes" %>
+        <%= f.check_box :called %><%= f.label :contacted %><hr />
+        <%= f.submit "Update", class:"edit-button" %>
+      <% end %>
+      <% if card.called? == false %>
+      <p>Has Not Been Contacted</p>
+      <% else %>
+      <p>Has Been Contacted</p>
+      <% end %>
+    </div>
+      <% end %>
     <% end %>
   </div>
 </div>
+
+<script>
+  $('#contacted').click(function(){
+    $('#contacted-card-holder').show(function(){
+      $('#uncontacted-card-holder').hide();
+    });
+  });
+
+  $('#uncontacted').click(function(){
+    $('#contacted-card-holder').hide(function(){
+      $('#uncontacted-card-holder').show();
+    });
+  });
+</script>

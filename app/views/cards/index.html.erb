@@ -6,9 +6,13 @@
   <div class="user-title">
     <p>All Cards</p>
   </div>
+  <div class="contact-buttons">
+    <div id="uncontacted">Not Contacted</div><div id="contacted">Contacted</div>
+  </div>
 <% if @user.is_admin? %>
-  <div class="card-holder">
+  <div id="uncontacted-card-holder">
     <% @allcards.each do |card| %>
+    <% unless card.called? %>
     <div class="assigned-cards">
       <form action="<%= user_card_path(@user.id, card.id) %>" method="POST" class="delete-card">
                 <input type="hidden" name="_method" value="DELETE" />
@@ -29,6 +33,46 @@
       <% end %>
     </div>
     <% end %>
+    <% end %>
+  </div>
+  <div id="contacted-card-holder">
+    <% @allcards.each do |card| %>
+    <% if card.called? %>
+    <div class="assigned-cards">
+      <form action="<%= user_card_path(@user.id, card.id) %>" method="POST" class="delete-card">
+                <input type="hidden" name="_method" value="DELETE" />
+                <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+                <button class='deletebutton'>Delete Card x</button><br />
+      </form>   
+      <p>Assigned To: <%= User.where(id: card.user_id).first.first_name %></p><hr />      
+      <p>Name: <%= card.first_name + " " + card.last_name%></p><hr />
+      <p>Phone: <%= card.phone %></p><hr />
+      <p>Email: <%= card.email %></p><hr />
+      <p>Address:<br /> <%= card.address %><br /><%= card.city + ", " + card.state %><br /><%= card.zipcode %></p><hr />
+      <p>Prayer: <%= card.prayer %></p><hr />
+      <p>Notes: <%= card.notes %></p>
+      <% if card.called? == false %>
+      <p>Called: <span>Has Not Been Called</span></p>
+      <% else %>
+      <p>Called: Has Been Called</p>
+      <% end %>
+    </div>
+    <% end %>
+    <% end %>
   </div>
   <% end %>
 </div>
+
+<script>
+  $('#contacted').click(function(){
+    $('#contacted-card-holder').show(function(){
+      $('#uncontacted-card-holder').hide();
+    });
+  });
+
+  $('#uncontacted').click(function(){
+    $('#contacted-card-holder').hide(function(){
+      $('#uncontacted-card-holder').show();
+    });
+  });
+</script>
