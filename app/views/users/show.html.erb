@@ -6,12 +6,12 @@
   <div class="user-title">
     <p><%= @user.first_name %>'s <span>Connection</span> Cards</p>
   </div>
+  <div class="contact-buttons">
+    <div id="uncontacted">Not Contacted</div><div id="contacted">Contacted</div>
+  </div><br />
   <% if @cards.empty? %>
     <center><%= image_tag('grey-thank-you.png') %></center><br />
   <% end %>
-  <div class="contact-buttons">
-    <div id="uncontacted">Not Contacted</div><div id="contacted">Contacted</div>
-  </div>
   <div id="uncontacted-card-holder">
     <% @cards.each do |card| %>
       <% unless card.called? %>
