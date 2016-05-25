@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   self.has_secure_password()
 
   def is_admin?
-    email == "nicholasjaybundy@gmail.com" || "heieunjun@gmail.com"
+    email == "nicholasjaybundy@gmail.com" || "heieunjun@gmail.com" || "jen@gallerychurch.com"
   end
 
 end
